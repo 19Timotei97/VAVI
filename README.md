@@ -23,18 +23,14 @@ MMS-TTS (Massively Multilingual Speech TTS) is used, a model created by Meta.
 1. Create a virtual environment add install the required dependencies
 `pip install -r requirements.txt`
 2. Download LLaVa model and the special projection matrix. Depending on your device's capabilities,
-select either the 7B or 13B parameters model, using huggingface-cli (and install it before if you don't have it)
-7B model:
-`
-huggingface-cli download jartine/llava-v1.5-7B-GGUF llava-v1.5-7b-Q4_K.gguf --local-dir . --local-dir-use-symlinks False
-huggingface-cli download jartine/llava-v1.5-7B-GGUF llava-v1.5-7b-mmproj-f16.gguf --local-dir . --local-dir-use-symlinks False
-`
+select either the 7B or 13B parameters model, using huggingface-cli (and install it before if you don't have it):
+- 7B model:\
+`huggingface-cli download jartine/llava-v1.5-7B-GGUF llava-v1.5-7b-Q4_K.gguf --local-dir . --local-dir-use-symlinks False`\
+`huggingface-cli download jartine/llava-v1.5-7B-GGUF llava-v1.5-7b-mmproj-f16.gguf --local-dir . --local-dir-use-symlinks False`
+- 13B model:\
+`huggingface-cli download PsiPi/liuhaotian_llava-v1.5-13b-GGUF llava-v1.5-13b-Q5_K_M.gguf --local-dir . --local-dir-use-symlinks False`\
+`huggingface-cli download PsiPi/liuhaotian_llava-v1.5-13b-GGUF mmproj-model-f16.gguf --local-dir . --local-dir-use-symlinks False`
 
-13B model:
-`
-huggingface-cli download PsiPi/liuhaotian_llava-v1.5-13b-GGUF llava-v1.5-13b-Q5_K_M.gguf --local-dir . --local-dir-use-symlinks False
-huggingface-cli download PsiPi/liuhaotian_llava-v1.5-13b-GGUF mmproj-model-f16.gguf --local-dir . --local-dir-use-symlinks False
-`
 3. Run the streamlit app using `streamlit run .\streamlit_app.py`. It should automatically open the app in the default browser.
 
 ## Future improvements
